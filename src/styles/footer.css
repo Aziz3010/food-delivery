@@ -1,0 +1,99 @@
+.footer {
+    background-color: #fde4e4;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+/* logo */
+.footer_logo img {
+    width: calc(100% - 80%);
+    margin-bottom: 5px;
+}
+
+.footer_logo h5 {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+.footer_logo p {
+    font-size: 0.9rem;
+    line-height: 28px;
+    color: #333;
+}
+
+/* Delivery Time */
+.footer_title {
+    font-size: 1.1rem;
+    color: #212245;
+    font-weight: 600;
+}
+
+.delivery_time_item {
+    background-color: transparent !important;
+}
+
+.delivery_time_item span {
+    font-weight: 600;
+    font-size: 1rem;
+    color: #212245;
+}
+
+.delivery_time_item p {
+    margin: 0;
+    color: #212245;
+}
+
+/* Newsletter */
+.newsletter {
+    padding: 5px;
+    border: 1px solid #212245;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.newsletter input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    width: calc(100% - 55px);
+}
+
+.newsletter input:focus {
+    outline: none;
+}
+
+.newsletter input::placeholder {
+    color: #212245;
+}
+
+.newsletter span {
+    cursor: pointer;
+    background-color: #df2020;
+    border-radius: 5px;
+    width: 50px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.newsletter span i {
+    color: #fff;
+}
+
+/* Copyright */
+.copyright_text {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #df2020;
+}
+
+.social_media span i {
+    color: #fff;
+    background-color: #df2020;
+    padding: 5px;
+    border-radius: 50%;
+}
