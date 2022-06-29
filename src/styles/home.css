@@ -1,0 +1,116 @@
+.hero_content {
+    padding-top: 70px;
+}
+
+.hero_title {
+    font-size: 2.5rem;
+    line-height: 55px;
+}
+
+.hero_title span {
+    color: #df2020;
+}
+
+.hero_content p {
+    font-size: 1rem;
+    line-height: 30px;
+    color: #777;
+}
+
+.hero_btns button,
+.hero_btns a {
+    border: 1px solid transparent;
+    outline: none;
+    padding: 7px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.order_btn {
+    background-color: #df2020;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color .3s ease;
+}
+
+.order_btn:hover {
+    background-color: #212245;
+}
+
+.hero_btns .all_foods_btn {
+    background-color: transparent;
+    border: 1px solid #df2020;
+    text-decoration: none;
+    color: #df2020;
+}
+
+.hero_service p{
+    margin: 0;
+    color: #212245;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.hero_service p i {
+    color: #fff;
+    background-color: #df2020;
+    padding: 5px;
+    border-radius: 50%;
+    font-weight: 500;
+}
+
+.feature_subtitle {
+    color: #df2020;
+}
+
+.feature_title span {
+    color: #df2020;
+}
+
+.feature_text {
+    color: #777;
+}
+
+.feature_item p {
+    color: #777;
+}
+
+.food_category {
+    background-color: #df2020;
+    margin-top: 30px;
+    padding: 20px 0;
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.food_category button {
+    border: none;
+    outline: none;
+    padding: 7px 20px;
+    background-color: transparent;
+    color: #fff;
+}
+
+.food_category button img {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.food_category .cat_btn {
+    display: flex;
+    align-items: center;
+}
+
+.cat_btn_active {
+    background-color: #fff !important;
+    border-radius: 5px !important;
+    color: #df2020 !important;
+}

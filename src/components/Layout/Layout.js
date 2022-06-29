@@ -16,6 +16,3 @@ const Layout = () => {
 }
 
 export default Layout;
-
-
-// stop vid#1 -> 01:04:22

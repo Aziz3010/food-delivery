@@ -1,0 +1,21 @@
+.category_item {
+    background-color: #fde4e4;
+    padding: 30px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform .4s ease;
+}
+
+.category_item h6 {
+    margin-bottom: 0;
+}
+
+.category_item:hover {
+    transform: translateY(-15px);
+}
+
+@media only screen and (max-width: 991px) {
+    .category_item {
+        margin: 10px 0;
+    }
+}
