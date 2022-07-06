@@ -114,3 +114,68 @@
     border-radius: 5px !important;
     color: #df2020 !important;
 }
+
+.tasty_treat_title {
+    text-transform: capitalize;
+}
+
+.tasty_treat_title span {
+    color: #df2020;
+}
+
+.tasty_treat_desc {
+    color: #777;
+    line-height: 28px;
+}
+
+.tasty_treat_list_title {
+    font-weight: 600;
+    margin: 0 0 10px 0;
+}
+
+.tasty_treat_list_title i {
+    font-weight: 500;
+    color: #df2020;
+}
+
+.tasty_treat_list_desc {
+    margin: 0;
+    color: #777;
+}
+
+
+.testimonial_subtitle,
+.testimonial_title span {
+    color: #df2020;
+}
+
+.testimonial_desc {
+    color: #777;
+    line-height: 30px;
+}
+
+/* media */
+@media only screen and (max-width: 400px) {
+    .category_item {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .hero_content .hero_btns {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+    
+    .hero_content .hero_service {
+        flex-direction: column;
+        gap: 10px !important;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    .food_category {
+        flex-wrap: wrap;
+    }
+}
+

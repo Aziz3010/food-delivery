@@ -1,0 +1,16 @@
+.review_text {
+    color: #777;
+    line-height: 30px;
+    margin: 30px 0;
+}
+
+.slider_content img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.slider_content h6 {
+    margin: 0;
+}

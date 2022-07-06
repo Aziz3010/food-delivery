@@ -36,9 +36,21 @@
 
 .addToCart_btn {
     border: none;
-    padding: 7px 25px;
+    padding: 7px 15px;
     background-color: #fd2020;
     color: #fff;
     border-radius: 5px;
     font-size: 0.9rem;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+    .product_content div {
+        flex-direction: column;
+    }
+
+    .addToCart_btn {
+        margin-top: 10px;
+    }
 }

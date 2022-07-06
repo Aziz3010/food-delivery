@@ -48,3 +48,9 @@ section {
 ::-webkit-scrollbar-thumb {
   background-color: #df2020;
 }
+
+@media only screen and (max-width: 768px) {
+  section {
+    padding: 40px 0px;
+  } 
+}
