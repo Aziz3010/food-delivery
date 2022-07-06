@@ -76,3 +76,9 @@
 .cart_buttom a:hover {
     color: #212245;
 }
+
+@media only screen and (max-width: 430px) {
+    .cart {
+        width: 300px;
+    }
+}
