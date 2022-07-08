@@ -1,0 +1,88 @@
+.search_widget {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 7px;
+    border: 1px solid #fde4e4;
+    border-radius: 5px;
+}
+
+.search_widget input {
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+.search_widget span i {
+    margin: 0;
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.sorting_widget select {
+    padding: 7px;
+    border: 1px solid #fde4e4;
+    border-radius: 5px;
+    color: #212245;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.sorting_widget select option {
+    background-color: #fcfcfc;
+}
+
+.paginationBttns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: 3rem;
+}
+
+.paginationBttns li {
+    margin: 0 8px;
+    color: #fff;
+}
+
+.paginationBttns li a {
+    background-color: #212245;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 3px 10px;
+    color: #fff;
+    transition: background-color .3s;
+}
+
+.paginationBttns li a:hover {
+    background-color: #fd2020;
+}
+
+@media only screen and (max-width: 991px) {
+    section .search_widget {
+        width: 75% !important;
+    }
+
+    section .sorting_widget select {
+        width: 75% !important;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    section .search_widget {
+        width: 100% !important;
+    }
+
+    section .sorting_widget select {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    section .search_widget {
+        margin-bottom: 20px;
+    }
+}
