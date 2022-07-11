@@ -6,106 +6,109 @@ import { useParams } from 'react-router-dom';
 import products from '../assets/fake-data/products';
 import '../styles/foodDetails.css';
 import ProductCard from '../components/UI/product-card/ProductCard';
+import { useDispatch } from 'react-redux';
+import { cartActions } from '../store/shopping-cart/cartSlice';
 
 const FoodDetails = () => {
+  const [enteredName, setEnteredName] = useState('');
+  const [enteredEmail, setEnteredEmail] = useState('');
+  const [enteredReview, setEnteredReview] = useState('');
   const [tab, setTab] = useState('desc');
   const { id } = useParams();
   const product = products.find(product => product.id === id)
-  const [previewImage, setPreviewImage] = useState(product.image01);
-  const relatedProduct = products.filter(item => item.category === product.category);
-  useEffect(()=>{setPreviewImage(product.image01)},[product]);
+  const { title, image01, image02, image03, desc, category, price } = product;
+  const relatedProduct = products.filter(item => item.category === category);
+  const [previewImage, setPreviewImage] = useState(image01);
+  useEffect(() => { setPreviewImage(product.image01) }, [product]);
+  useEffect(() => { window.scrollTo(0, 0) }, [product]);
+  const dispatch = useDispatch();
+  const addToCart = () => {
+    dispatch(cartActions.addItem({
+      id,
+      title,
+      image01,
+      price
+    }))
+  }
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+  }
 
   return (
     <>
       <Helmet title='Details' >
-        <CommonSection title={product.title} />
-
+        <CommonSection title={title} />
         <section>
           <Container>
             <Row>
-
               {/* images */}
               <Col lg='2' md='2'>
                 <div className="product_details_images">
                   <div className="product_details_image_item">
-                    <img src={product.image01} alt="image01" className='w-50' onClick={() => { setPreviewImage(product.image01) }} />
+                    <img src={image01} alt="image01" className='w-50' onClick={() => { setPreviewImage(image01) }} />
                   </div>
                   <div className="product_details_image_item">
-                    <img src={product.image02} alt="image02" className='w-50' onClick={() => { setPreviewImage(product.image02) }} />
+                    <img src={image02} alt="image02" className='w-50' onClick={() => { setPreviewImage(image02) }} />
                   </div>
                   <div className="product_details_image_item">
-                    <img src={product.image03} alt="image03" className='w-50' onClick={() => { setPreviewImage(product.image03) }} />
+                    <img src={image03} alt="image03" className='w-50' onClick={() => { setPreviewImage(image03) }} />
                   </div>
                 </div>
               </Col>
-
               {/* main image */}
               <Col lg='4' md='4'>
                 <div className="product_details_main_image">
                   <img src={previewImage} alt="image01" className='w-100' />
                 </div>
               </Col>
-
               {/* info */}
               <Col lg='6' md='6'>
                 <div className="single_product_content">
-                  <h2 className='product_content_title mb-3'>{product.title}</h2>
-                  <p className='product_price'>Price: <span>{`$ ${product.price}`}</span></p>
-                  <p className='product_content_category'>Category: <span>{product.category}</span></p>
-                  <button className='addToCart_btn'>Add To Cart</button>
+                  <h2 className='product_content_title mb-3'>{title}</h2>
+                  <p className='product_price'>Price: <span>{`$ ${price}`}</span></p>
+                  <p className='product_content_category'>Category: <span>{category}</span></p>
+                  <button className='addToCart_btn' onClick={addToCart}>Add To Cart</button>
                 </div>
               </Col>
-
               {/* Description & Review */}
               <Col lg='12' className='my-4'>
                 {/* tabs */}
                 <div className="tabs d-flex align-items-center gap-5 py-3">
-                  <h6 onClick={() => { setTab('desc') }} className={tab === 'desc' ? 'tabs_active' : null}>Description</h6>
-                  <h6 onClick={() => { setTab('review') }} className={tab === 'review' ? 'tabs_active' : null}>Review</h6>
+                  <h6 onClick={() => setTab('desc')} className={tab === 'desc' ? 'tabs_active' : ''}>Description</h6>
+                  <h6 onClick={() => setTab('review')} className={tab === 'review' ? 'tabs_active' : ''}>Review</h6>
                 </div>
 
                 {/* Description & Reviews */}
                 {
-                  tab === 'desc'
-                    ?
-                    <div className="tabs_desc">
-                      <p>{product.desc}</p>
-                    </div>
+                  tab === 'desc' ?
+                    (<div className="tabs_desc">
+                      <p>{desc}</p>
+                    </div>)
                     :
-                    <div className="tab_form">
-                      <div div className="reviews">
+                    (<div className="tab_form">
+                      <div className="reviews">
                         <div className="review">
-                          <p className="user_name">Jhon Doe</p>
-                          <p className="user_email">Jhon@example.com</p>
-                          <p className="feedback_text">Good product</p>
-                        </div>
-                        <div className="review">
-                          <p className="user_name">Jhon Doe</p>
-                          <p className="user_email">Jhon@example.com</p>
-                          <p className="feedback_text">Good product</p>
-                        </div>
-                        <div className="review">
-                          <p className="user_name">Jhon Doe</p>
-                          <p className="user_email">Jhon@example.com</p>
-                          <p className="feedback_text">Good product</p>
+                          <p className="user_name">{enteredName}</p>
+                          <p className="user_email">{enteredEmail}</p>
+                          <p className="feedback_text">{enteredReview}</p>
                         </div>
                       </div>
-                      <form className='form'>
+                      <form className='form' onSubmit={submitHandler}>
                         <div className='form_group'>
-                          <input type="text" placeholder='Enter your name' />
+                          <input type="text" required placeholder='Enter your name' onChange={(e) => setEnteredName(e.target.value)} />
                         </div>
                         <div className='form_group'>
-                          <input type="email" placeholder='Enter your email' />
+                          <input type="email" required placeholder='Enter your email' onChange={(e) => setEnteredEmail(e.target.value)} />
                         </div>
                         <div className='form_group'>
-                          <textarea rows='5' placeholder='Enter your feedback' />
+                          <textarea rows='5' required placeholder='Enter your review' onChange={(e) => setEnteredReview(e.target.value)} />
                         </div>
                         <button type='submit' className='addToCart_btn w-100'>Submit</button>
                       </form>
-                    </div>
+                    </div>)
                 }
               </Col>
-
               {/* relatedProduct */}
               <Col lg='12'>
                 <h2 className='relatedProduct-title mb-4'>You might also like</h2>
@@ -119,11 +122,9 @@ const FoodDetails = () => {
                   }
                 </Row>
               </Col>
-
             </Row>
           </Container>
         </section>
-
       </Helmet>
     </>
   )
