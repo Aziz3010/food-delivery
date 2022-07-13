@@ -1,0 +1,59 @@
+.table-responsive .table-row {
+    line-height: 80px;
+}
+
+.table-responsive .table-image {
+    width: 80px;
+}
+
+.table-responsive .table-image img {
+    width: 100%;
+}
+
+.table-responsive .table-delete i {
+    color: #fff;
+    background-color: #212245;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    transition: background-color .3s;
+}
+
+.table-responsive .table-delete i:hover {
+    background-color: #fd2020;
+}
+
+.cart_page h6 span {
+    color: #fd2020;
+    font-size: 1.4rem;
+}
+
+@media screen and (max-width: 480px) {
+    .table-responsive::-webkit-scrollbar {
+        height: 2px;
+    }
+
+    .table-responsive .table-row {
+        line-height: 200%;
+    }   
+}
+
+@media screen and (max-width: 386px) {
+    .cart_page_btns {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .cart_page_btns a {
+        margin: 0 !important;
+        margin-bottom: 15px !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    .cart_page_btns a:last-child {
+        margin-bottom: 0px !important;
+    }
+}

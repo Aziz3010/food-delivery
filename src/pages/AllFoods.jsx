@@ -37,14 +37,16 @@ const AllFoods = () => {
           <Container>
             <Row>
               
-              <Col lg='6' md='6' sm='6'>
-                <div className="search_widget w-50">
+              {/* <Col lg='6' md='6' sm='6'> */}
+              <Col lg='12' md='12' sm='12'>
+                {/* <div className="search_widget w-50"> */}
+                <div className="search_widget w-100">
                   <input value={searchTerm} onChange={(e)=>{setSearchTerm(e.target.value)}} type="text" placeholder="I'm looking for..." />
                   <span><i className='ri-search-line'></i></span>
                 </div>
               </Col>
 
-              <Col lg='6' md='6' sm='6' className='mb-4'>
+              {/* <Col lg='6' md='6' sm='6' className='mb-4'>
                 <div className="sorting_widget text-end">
                   <select className='w-50'>
                     <option>Default</option>
@@ -54,7 +56,7 @@ const AllFoods = () => {
                     <option value="low-price">Low Price</option>
                   </select>
                 </div>
-              </Col>
+              </Col> */}
               
               { displayPage.map((item, index)=> (
                   <Col lg='3' md='4' sm='6' key={index} className='mt-4' >
