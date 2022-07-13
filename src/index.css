@@ -49,6 +49,16 @@ section {
   background-color: #df2020;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 @media only screen and (max-width: 768px) {
   section {
     padding: 40px 0px;

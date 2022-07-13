@@ -13,6 +13,7 @@ const FoodDetails = () => {
   const [enteredName, setEnteredName] = useState('');
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredReview, setEnteredReview] = useState('');
+  const reviews = [];
   const [tab, setTab] = useState('desc');
   const { id } = useParams();
   const product = products.find(product => product.id === id)
@@ -33,6 +34,13 @@ const FoodDetails = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    const userReview = {
+      Name: enteredName,
+      Email: enteredEmail,
+      Review: enteredReview,
+    };
+    reviews.push(userReview);
+    console.log(reviews);
   }
 
   return (
@@ -88,11 +96,15 @@ const FoodDetails = () => {
                     :
                     (<div className="tab_form">
                       <div className="reviews">
-                        <div className="review">
-                          <p className="user_name">{enteredName}</p>
-                          <p className="user_email">{enteredEmail}</p>
-                          <p className="feedback_text">{enteredReview}</p>
-                        </div>
+                        {
+                          reviews.map((item, index) => (
+                            <div className="review" key={index}>
+                              <p className="user_name">{item.Name}</p>
+                              <p className="user_email">{item.Email}</p>
+                              <p className="feedback_text">{item.Review}</p>
+                            </div>
+                          ))
+                        }
                       </div>
                       <form className='form' onSubmit={submitHandler}>
                         <div className='form_group'>
